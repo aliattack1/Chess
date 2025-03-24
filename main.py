@@ -11,6 +11,11 @@ class Square:
         self.char = char
 
     def toa(self):
+        d = {'h': 'g', 'g': 'f', 'f': 'e', 'e': 'd', 'd': 'c', 'c': 'b', 'b': 'a'}
+        self.char = d[self.char]
+    def toh(self):
+        d = {'a': 'b', 'b': 'c', 'c': 'd', 'd': 'e', 'e': 'f', 'f': 'g', 'g': 'h'}
+        self.char = d[self.char]
 
     def movedforward(self, color):
         if color == 'white':
@@ -22,7 +27,7 @@ class Square:
         if color == 'white' and side == 'left' or color == 'black' and side == 'right':
             self.toa()
         else:
-            self.tob()
+            self.toh()
 
 class Piece:
     def __init__(self, color, square:Square):
